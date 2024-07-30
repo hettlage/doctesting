@@ -68,7 +68,7 @@ jobs:
       - uses: pdm-project/setup-pdm@d4d1a7759495bc23245b547ccc2f4d5b0cef4cee
       - name: Publish to the package repository
         run: |
-          pdm publish --repository https://test.pypi.org
+          pdm publish --repository https://test.pypi.org/legacy
 
   publish-documentation:
     needs:
