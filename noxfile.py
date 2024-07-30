@@ -61,14 +61,14 @@ def check_version(session):
 import argparse
 import sys
 
-import doctest
+import chdoctest
 
 
 parser = argparse.ArgumentParser()
 parser.add_argument("expected_version")
 args = parser.parse_args()
 
-package_version = doctest.__version__
+package_version = chdoctest.__version__
 expected_version = args.expected_version
 if package_version != expected_version:
     print(f"The package version ({package_version}) differs from the expected version ({expected_version}).")

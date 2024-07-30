@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
-site_name: doctest
+site_name: chdoctest
 site_url: https://hettlage.github.io/doctesting
 theme:
   name: material

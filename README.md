@@ -1,9 +1,9 @@
-# doctest
+# chdoctest
 
 ## Installation
 
 ```console
-pip install doctest
+pip install chdoctest
 ```
 
 ## Development and deployment

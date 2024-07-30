@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "doctest"
+name = "chdoctest"
 description = "Documentation testing."
 readme = "README.md"
 authors = [{name = "Christian Hettlage", email = "c.hettlage@saao.nrf.ac.za"}]
@@ -18,7 +18,7 @@ Homepage = "https://hettlage.github.io/doctesting"
 Repository = "https://github.com/hettlage/doctesting"
 
 [tool.setuptools.dynamic]
-version = {attr = "doctest.__version__"}
+version = {attr = "chdoctest.__version__"}
 
 [tool.pdm]
 distribution = true
