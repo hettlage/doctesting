@@ -54,7 +54,7 @@ jobs:
           ref="${{ github.ref }}"
           nox -s check_version -- ${ref:10:1000}
 
-  publish:
+  publish-package:
     needs:
       - "check-using-main"
       - "run-quality-checks-and-tests"
@@ -68,4 +68,27 @@ jobs:
       - uses: pdm-project/setup-pdm@d4d1a7759495bc23245b547ccc2f4d5b0cef4cee
       - name: Publish to the package repository
         run: |
-          pdm publish --repository https://example.com
+          pdm publish --repository https://test.pypi.org
+
+  publish-documentation:
+    needs:
+      - "publish-package"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
