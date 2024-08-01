@@ -25,6 +25,7 @@ distribution = true
 
 [tool.pdm.dev-dependencies]
 docs = [
+    "mike>=2.1.2",
     "mkdocs-material>=9.5.30",
 ]
 test = [

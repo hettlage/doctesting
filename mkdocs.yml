@@ -4,3 +4,8 @@ site_name: chdoctest
 site_url: https://hettlage.github.io/doctesting
 theme:
   name: material
+  custom_dir: custom_docs_theme
+extra:
+  version:
+    provider: mike
+    alias: true
