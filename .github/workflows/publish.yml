@@ -86,4 +86,5 @@ jobs:
       - name: Publish the documentation for the new version
         run: |
           ref="${{ github.ref }}"
+          pdm install
           pdm publish_docs ${ref:10:1000} latest
