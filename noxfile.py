@@ -22,9 +22,9 @@ def test(session):
 
 
 @nox.session
-def docs(session):
+def build_docs(session):
     session.run_install("pdm", "install", "-G", "docs", external=True)
-    session.run("pdm", "docs", external=True)
+    session.run("pdm", "build_docs", external=True)
 
 
 @nox.session

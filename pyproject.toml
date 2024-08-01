@@ -42,4 +42,5 @@ test = "pytest"
 testcov = "pytest --cov=src --cov-report=html --cov-report=term"
 typecheck = "mypy src tests"
 lint = {composite = ["precommit", "typecheck"]}
-docs = "mkdocs build"
+build_docs = "mkdocs build"
+publish_docs = "mike deploy"
